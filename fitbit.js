@@ -86,6 +86,12 @@ module.exports = function (RED) {
             inputs: ["startDate"],
             method: "GET",
             func: UrlFactory.sleepLog
+        },
+        "log-activity": {
+            display: RED._("fitbit.resources.log-activity"),
+            inputs: ["startDate", "startTime", "durationSec", "activityName", "manualCalories", "distance"],
+            method: "POST",
+            func: UrlFactory.logActivty,
         }
     };
 
