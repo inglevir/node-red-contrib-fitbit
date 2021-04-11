@@ -48,36 +48,43 @@ module.exports = function (RED) {
         "body-fat-log": {
             display: RED._("fitbit.resources.body-fat-log"),
             inputs: ["startDate", "endDate", "period"],
+            method: "GET",
             func: UrlFactory.bodyFatLog
         },
         "body-weight-log": {
             display: RED._("fitbit.resources.body-weight-log"),
             inputs: ["startDate", "endDate", "period"],
+            method: "GET",
             func: UrlFactory.bodyWeightLog
         },
         "body-timeseries": {
             display: RED._("fitbit.resources.body-timeseries"),
             inputs: ["bodySeriesPath", "startDate", "endDate", "period"],
+            method: "GET",
             func: UrlFactory.bodyTimeSeries
         },
         "activity-timeseries": {
             display: RED._("fitbit.resources.activity-timeseries"),
             inputs: ["activitiesSeriesPath", "startDate", "endDate", "period"],
+            method: "GET",
             func: UrlFactory.activityTimeSeries
         },
         "activity-summary": {
             display: RED._("fitbit.resources.activity-summary-in"),
             inputs: ["startDate"],
+            method: "GET",
             func: UrlFactory.activitySummary
         },
         "devices": {
             display: RED._("fitbit.resources.devices-in"),
             inputs: [],
+            method: "GET",
             func: UrlFactory.devices
         },
         "sleep-log": {
             display: RED._("fitbit.resources.sleep-log"),
             inputs: ["startDate"],
+            method: "GET",
             func: UrlFactory.sleepLog
         }
     };
@@ -128,7 +135,7 @@ module.exports = function (RED) {
             const credentialsNode = RED.nodes.getNode(config.fitbit);
             const credentials = RED.nodes.getNode(config.fitbit).credentials;
 
-            oauth.makeRequest("GET", url, credentials, credentialsNode.id).then(data => {
+            oauth.makeRequest(resource.method, url, credentials, credentialsNode.id).then(data => {
                 try {
                     msg.payload = parseFitbitData(data);
                 } catch (err) {
