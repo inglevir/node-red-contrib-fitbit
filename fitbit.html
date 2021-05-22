@@ -27,6 +27,8 @@
             durationSecType: {},
             activityName: {},
             activityNameType: {},
+            activityId: {},
+            activityIdType: {},
             manualCalories: {},
             manualCaloriesType: {},
             distance: {},
@@ -70,6 +72,7 @@
             typeInput('period');
             typeInput('durationSec');
             typeInput('activityName');
+            typeInput('activityId');
             typeInput('manualCalories');
             typeInput('distance');
             typeInput('activityLogId');
@@ -128,6 +131,11 @@
             <label for="node-input-durationSec"><i class="fa fa-edit"></i> <span data-i18n="fitbit.label.durationsec"></span></label>
             <input type="text" id="node-input-durationSec" style="width:275px;">
             <input type="hidden" id="node-input-durationSecType">
+        </div>
+        <div class="form-row">
+            <label for="node-input-activityId"><i class="fa fa-edit"></i> <span data-i18n="fitbit.label.activityid"></span></label>
+            <input type="text" id="node-input-activityId" style="width:275px;">
+            <input type="hidden" id="node-input-activityIdType">
         </div>
         <div class="form-row">
             <label for="node-input-activityName"><i class="fa fa-edit"></i> <span data-i18n="fitbit.label.activityname"></span></label>

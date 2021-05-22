@@ -138,8 +138,12 @@ class UrlFactory {
   static logActivty(data) {
     checkData(data);
 
-    if (!data.activityName) {
-      throw new Error("activityName is required.");
+    if (!data.activityId && !data.activityName) {
+      throw new Error("activityId or activityName is required.");
+    }
+
+    if (data.activityId && data.activityName) {
+      throw new Error("Either activityId or activityName should be specified.");
     }
 
     if (!data.manualCalories) {
@@ -159,7 +163,12 @@ class UrlFactory {
     }
 
     const urlObj = new URL(fitbitUrlCurrentUser("activities"));
-    urlObj.searchParams.append("activityName", data.activityName);
+    if (data.activityId) {
+      urlObj.searchParams.append("activityId", data.activityId);
+    } else {
+      urlObj.searchParams.append("activityName", data.activityName);
+    }
+
     urlObj.searchParams.append("startTime", data.startTime);
     urlObj.searchParams.append("manualCalories", data.manualCalories);
     urlObj.searchParams.append("durationMillis", String(parseInt(data.durationSec) * 1000));

@@ -20,6 +20,7 @@
             "enddate": "End Date",
             "durationsec": "Duration(sec)",
             "activityname": "Activity Name",
+            "activityid": "Activity Id",
             "activitylogid": "Activity Log Id",
             "calories": "Calories",
             "distance": "Distance",

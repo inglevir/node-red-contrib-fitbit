@@ -96,7 +96,7 @@ module.exports = function (RED) {
         },
         "log-activity": {
             display: RED._("fitbit.resources.log-activity"),
-            inputs: ["startDate", "startTime", "durationSec", "activityName", "manualCalories", "distance"],
+            inputs: ["startDate", "startTime", "durationSec", "activityId", "activityName", "manualCalories", "distance"],
             method: "POST",
             func: UrlFactory.logActivty,
         },
@@ -156,7 +156,6 @@ module.exports = function (RED) {
 
             oauth.makeRequest(resource.method, url, credentials, credentialsNode.id).then(data => {
                 try {
-                    console.log("XXX kmv resp: " + JSON.stringify(data.response));
                     msg.payload = parseFitbitData(data);
                 } catch (err) {
                     errorReport(err, msg);
