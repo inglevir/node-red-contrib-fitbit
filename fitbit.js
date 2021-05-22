@@ -1,6 +1,13 @@
 const UrlFactory = require('./UrlFactory');
 
-function parseFitbitData(body) {
+function parseFitbitData(data) {
+    const status = data.statusCode;
+    const body = data.body;
+
+    if (status == 204) { // No content
+        return {}
+    }
+
     if (!body)
         throw "Fitbit API returned an empty response";
 
@@ -92,6 +99,12 @@ module.exports = function (RED) {
             inputs: ["startDate", "startTime", "durationSec", "activityName", "manualCalories", "distance"],
             method: "POST",
             func: UrlFactory.logActivty,
+        },
+        "delete-activity": {
+            display: RED._("fitbit.resources.delete-activity"),
+            inputs: ["activityLogId"],
+            method: "DELETE",
+            func: UrlFactory.deleteActivty,
         }
     };
 
@@ -143,6 +156,7 @@ module.exports = function (RED) {
 
             oauth.makeRequest(resource.method, url, credentials, credentialsNode.id).then(data => {
                 try {
+                    console.log("XXX kmv resp: " + JSON.stringify(data.response));
                     msg.payload = parseFitbitData(data);
                 } catch (err) {
                     errorReport(err, msg);

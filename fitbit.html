@@ -31,6 +31,8 @@
             manualCaloriesType: {},
             distance: {},
             distanceType: {},
+            activityLogId: {},
+            activityLogIdType: {},
         },
         inputs: 1,
         outputs: 1,
@@ -70,6 +72,7 @@
             typeInput('activityName');
             typeInput('manualCalories');
             typeInput('distance');
+            typeInput('activityLogId');
         }
     });
 </script>
@@ -115,6 +118,11 @@
             <label for="node-input-startTime"><i class="fa fa-edit"></i> <span data-i18n="fitbit.label.starttime"></span></label>
             <input type="text" id="node-input-startTime" style="width:275px;">
             <input type="hidden" id="node-input-startTimeType">
+        </div>
+        <div class="form-row">
+            <label for="node-input-activityLogId"><i class="fa fa-edit"></i> <span data-i18n="fitbit.label.activitylogid"></span></label>
+            <input type="text" id="node-input-activityLogId" style="width:275px;">
+            <input type="hidden" id="node-input-activityLogIdType">
         </div>
         <div class="form-row">
             <label for="node-input-durationSec"><i class="fa fa-edit"></i> <span data-i18n="fitbit.label.durationsec"></span></label>

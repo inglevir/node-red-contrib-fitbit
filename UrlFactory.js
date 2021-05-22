@@ -168,6 +168,16 @@ class UrlFactory {
     return urlObj.href;
   }
 
+  static deleteActivty(data) {
+    checkData(data);
+
+    if (!data.activityLogId) {
+      throw new Error("activityLogId is required.");
+    }
+
+    return fitbitUrlCurrentUser("activities", data.activityLogId);
+  }
+
 }
 
 module.exports = UrlFactory;
