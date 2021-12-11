@@ -254,6 +254,26 @@ class UrlFactory {
     return urlObj.href;
   }
 
+
+  static logWeight(data) {
+    checkData(data);
+
+    if (!data.startDate) {
+      throw new Error("Start date is required.");
+    }
+
+    if (!data.weight) {
+      throw new Error("weight is required.");
+    }
+
+    const urlObj = new URL(fitbitUrlCurrentUser("body/log/weight"));
+
+    urlObj.searchParams.append("weight", data.weight);
+    urlObj.searchParams.append("date", formatDate(data.startDate));
+
+    return urlObj.href;
+  }
+
 }
 
 module.exports = UrlFactory;

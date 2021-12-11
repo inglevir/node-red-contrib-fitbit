@@ -14,7 +14,8 @@
             "log-activity": "Log activity",
             "delete-activity": "Delete activity",
             "log-food": "Log food",
-            "delete-food": "Delete log food"
+            "delete-food": "Delete log food",
+            "log-weight": "Log weight"
         },
         "label": {
             "fitbit": "Fitbit",

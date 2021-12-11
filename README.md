@@ -38,6 +38,7 @@ Fitbit query node supports several endpoints
 - Delete activity
 - Log food
 - Delete log food
+- Log weight
 
 Depending on the endpoint selected the node will allow different inputs to filter the fitbit query.
 

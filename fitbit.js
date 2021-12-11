@@ -124,6 +124,12 @@ module.exports = function (RED) {
             method: "POST",
             func: UrlFactory.logFood,
         },
+        "log-weight": {
+            display: RED._("fitbit.resources.log-weight"),
+            inputs: ["startDate", "weight"],
+            method: "POST",
+            func: UrlFactory.logWeight,
+        },
     };
 
     function fitbitInNode(config) {

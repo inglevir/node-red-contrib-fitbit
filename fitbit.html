@@ -41,7 +41,9 @@
             mealTypeId: {},
             mealTypeIdType: {},
             unitId: {},
-            unitIdType: {}
+            unitIdType: {},
+            weight: {},
+            weightType: {}
         },
         inputs: 1,
         outputs: 1,
@@ -86,6 +88,7 @@
             typeInput('foodId');
             typeInput('mealTypeId');
             typeInput('unitId');
+            typeInput('weight');
         }
     });
 </script>
@@ -194,6 +197,11 @@
             <label for="node-input-mealTypeId"><i class="fa fa-edit"></i> <span data-i18n="fitbit.label.mealType"></span></label>
             <input type="text" id="node-input-mealTypeId" style="width:275px;">
             <input type="hidden" id="node-input-mealTypeIdType">
+        </div>
+        <div class="form-row">
+            <label for="node-input-weight"><i class="fa fa-edit"></i> <span data-i18n="fitbit.label.calories"></span></label>
+            <input type="text" id="node-input-weight" style="width:275px;">
+            <input type="hidden" id="node-input-weightType">
         </div>
     </div>
     <div class="form-row">
