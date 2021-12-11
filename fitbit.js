@@ -114,7 +114,7 @@ module.exports = function (RED) {
         },
         "delete-activity": {
             display: RED._("fitbit.resources.delete-activity"),
-            inputs: ["activityLogId"],
+            inputs: ["logId"],
             method: "DELETE",
             func: UrlFactory.deleteActivty,
         },

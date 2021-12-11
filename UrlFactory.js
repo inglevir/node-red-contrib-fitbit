@@ -213,11 +213,11 @@ class UrlFactory {
   static deleteActivty(data) {
     checkData(data);
 
-    if (!data.activityLogId) {
-      throw new Error("activityLogId is required.");
+    if (!data.logId) {
+      throw new Error("logId is required.");
     }
 
-    return fitbitUrlCurrentUser("activities", data.activityLogId);
+    return fitbitUrlCurrentUser("activities", data.logId);
   }
 
   static logFood(data) {

@@ -10,7 +10,7 @@ describe('UrlFactory.logActivity', () => {
     done();
   });
 
-  it('should throw if no activityLogId or activityId passed', done => {
+  it('should throw if no logId or activityId passed', done => {
     expect(() => UrlFactory.logActivty({})).to.throw("activityId or activityName is required");
     done();
   });
