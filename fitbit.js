@@ -124,6 +124,12 @@ module.exports = function (RED) {
             method: "POST",
             func: UrlFactory.logFood,
         },
+        "delete-food": {
+            display: RED._("fitbit.resources.delete-food"),
+            inputs: ["logId"],
+            method: "DELETE",
+            func: UrlFactory.deleteFood,
+        },
         "log-weight": {
             display: RED._("fitbit.resources.log-weight"),
             inputs: ["startDate", "weight"],

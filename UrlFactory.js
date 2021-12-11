@@ -220,6 +220,16 @@ class UrlFactory {
     return fitbitUrlCurrentUser("activities", data.logId);
   }
 
+  static deleteFood(data) {
+    checkData(data);
+
+    if (!data.logId) {
+      throw new Error("logId is required.");
+    }
+
+    return fitbitUrlCurrentUser("meals", data.logId);
+  }
+
   static logFood(data) {
     checkData(data);
 
