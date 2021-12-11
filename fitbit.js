@@ -181,6 +181,8 @@ module.exports = function (RED) {
                 return;
             }
 
+            console.info("Calling fitbit url :" + url);
+
             const credentialsNode = RED.nodes.getNode(config.fitbit);
             const credentials = RED.nodes.getNode(config.fitbit).credentials;
 
