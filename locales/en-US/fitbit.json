@@ -26,7 +26,7 @@
             "durationsec": "Duration(sec)",
             "activityname": "Activity Name",
             "activityid": "Activity Id",
-            "logId": "Fitbit Log Id",
+            "logId": "Log Id",
             "unitId": "Unit ID",
             "mealType": "Meal Type",
             "foodId": "Food ID",
