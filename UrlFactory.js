@@ -227,7 +227,7 @@ class UrlFactory {
       throw new Error("logId is required.");
     }
 
-    return fitbitUrlCurrentUser("meals", data.logId);
+    return fitbitUrlCurrentUser("foods/log", data.logId);
   }
 
   static logFood(data) {

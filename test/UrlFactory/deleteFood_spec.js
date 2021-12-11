@@ -21,7 +21,7 @@ describe('UrlFactory.deleteActivity', () => {
       logId: 1517
     };
 
-    expect(UrlFactory.deleteFood(data)).to.equal("https://api.fitbit.com/1/user/-/meals/1517.json");
+    expect(UrlFactory.deleteFood(data)).to.equal("https://api.fitbit.com/1/user/-/foods/log/1517.json");
     done();
   });
 
