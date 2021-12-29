@@ -136,6 +136,12 @@ module.exports = function (RED) {
             method: "POST",
             func: UrlFactory.logWeight,
         },
+        "delete-weight": {
+            display: RED._("fitbit.resources.delete-weight"),
+            inputs: ["logId"],
+            method: "DELETE",
+            func: UrlFactory.deleteWeightLog,
+        },
     };
 
     function fitbitInNode(config) {

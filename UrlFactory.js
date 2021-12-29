@@ -284,6 +284,17 @@ class UrlFactory {
     return urlObj.href;
   }
 
+  static deleteWeightLog(data) {
+    checkData(data);
+
+    if (!data.logId) {
+      throw new Error("logId is required.");
+    }
+
+    return fitbitUrlCurrentUser("body/log/weight", data.logId);
+  }
+
+
 }
 
 module.exports = UrlFactory;
