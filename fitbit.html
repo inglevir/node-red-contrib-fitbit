@@ -34,6 +34,8 @@
             manualCaloriesType: {},
             distance: {},
             distanceType: {},
+            distanceUnit: {},
+            distanceUnitType: {},
             logId: {},
             logIdType: {},
             foodId: {},
@@ -84,6 +86,7 @@
             typeInput('activityId');
             typeInput('manualCalories');
             typeInput('distance');
+            typeInput('distanceUnit');
             typeInput('logId');
             typeInput('foodId');
             typeInput('mealTypeId');
@@ -128,6 +131,7 @@
                 <option value="" selected disabled hidden data-i18n="fitbit.label.activitiesSeriesPathDefault"></option>
                 <option value="steps" data-i18n="fitbit.label.activitiesSeriesPathSteps"></option>
                 <option value="distance" data-i18n="fitbit.label.activitiesSeriesPathDistance"></option>
+                <option value="distanceUnit" data-i18n="fitbit.label.activitiesSeriesPathDistanceUnit"></option>
                 <option value="calories" data-i18n="fitbit.label.activitiesSeriesPathCalories"></option>
                 <option value="caloriesBMR" data-i18n="fitbit.label.activitiesSeriesPathCaloriesBMR"></option>
                 <option value="activityCalories" data-i18n="fitbit.label.activitiesSeriesPathCaloriesActive"></option>
@@ -172,6 +176,11 @@
             <label for="node-input-distance"><i class="fa fa-edit"></i> <span data-i18n="fitbit.label.distance"></span></label>
             <input type="text" id="node-input-distance" style="width:275px;">
             <input type="hidden" id="node-input-distanceType">
+        </div>
+        <div class="form-row">
+            <label for="node-input-distanceUnit"><i class="fa fa-edit"></i> <span data-i18n="fitbit.label.distanceUnit"></span></label>
+            <input type="text" id="node-input-distanceUnit" style="width:275px;">
+            <input type="hidden" id="node-input-distanceUnitType">
         </div>
         <div class="form-row">
             <label for="node-input-endDate"><i class="fa fa-edit"></i> <span data-i18n="fitbit.label.enddate"></span></label>

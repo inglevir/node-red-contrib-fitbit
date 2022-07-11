@@ -204,9 +204,15 @@ class UrlFactory {
     urlObj.searchParams.append("manualCalories", data.manualCalories);
     urlObj.searchParams.append("durationMillis", String(parseInt(data.durationSec) * 1000));
     urlObj.searchParams.append("date", formatDate(data.startDate));
+
     if (data.distance) {
       urlObj.searchParams.append("distance", data.distance);
     }
+
+    if (data.distanceUnit) {
+      urlObj.searchParams.append("distanceUnit", data.distanceUnit);
+    }
+
     return urlObj.href;
   }
 

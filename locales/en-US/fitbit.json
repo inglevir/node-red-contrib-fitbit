@@ -33,6 +33,7 @@
             "foodId": "Food ID",
             "calories": "Calories",
             "distance": "Distance",
+            "distanceUnit": "Distance Unit",
             "period": "Period",
             "resource": "Endpoint",
             "bodySeriesPath": "Resource",
@@ -48,6 +49,7 @@
             "activitiesSeriesPathDefault": "Resource",
             "activitiesSeriesPathSteps": "Steps",
             "activitiesSeriesPathDistance": "Distance",
+            "activitiesSeriesPathDistanceUnit": "Distance Unit",
             "activitiesSeriesPathCalories": "Calories",
             "activitiesSeriesPathCaloriesBMR": "Calories BMR",
             "activitiesSeriesPathCaloriesActive": "Active Calories"

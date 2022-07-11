@@ -108,7 +108,7 @@ module.exports = function (RED) {
         },
         "log-activity": {
             display: RED._("fitbit.resources.log-activity"),
-            inputs: ["startDate", "startTime", "durationSec", "activityId", "activityName", "manualCalories", "distance"],
+            inputs: ["startDate", "startTime", "durationSec", "activityId", "activityName", "manualCalories", "distance", "distanceUnit"],
             method: "POST",
             func: UrlFactory.logActivty,
         },
