@@ -108,13 +108,13 @@ module.exports = function (RED) {
         },
         "log-activity": {
             display: RED._("fitbit.resources.log-activity"),
-            inputs: ["startDate", "startTime", "durationSec", "activityId", "activityName", "manualCalories", "distance"],
+            inputs: ["startDate", "startTime", "durationSec", "activityId", "activityName", "manualCalories", "distance", "distanceUnit"],
             method: "POST",
             func: UrlFactory.logActivty,
         },
         "delete-activity": {
             display: RED._("fitbit.resources.delete-activity"),
-            inputs: ["activityLogId"],
+            inputs: ["logId"],
             method: "DELETE",
             func: UrlFactory.deleteActivty,
         },
@@ -123,6 +123,24 @@ module.exports = function (RED) {
             inputs: ["startDate", "foodId", "mealTypeId", "unitId", "manualCalories"],
             method: "POST",
             func: UrlFactory.logFood,
+        },
+        "delete-food": {
+            display: RED._("fitbit.resources.delete-food"),
+            inputs: ["logId"],
+            method: "DELETE",
+            func: UrlFactory.deleteFood,
+        },
+        "log-weight": {
+            display: RED._("fitbit.resources.log-weight"),
+            inputs: ["startDate", "weight"],
+            method: "POST",
+            func: UrlFactory.logWeight,
+        },
+        "delete-weight": {
+            display: RED._("fitbit.resources.delete-weight"),
+            inputs: ["logId"],
+            method: "DELETE",
+            func: UrlFactory.deleteWeightLog,
         },
     };
 
@@ -168,6 +186,8 @@ module.exports = function (RED) {
                 errorReport("Could not build api url", msg);
                 return;
             }
+
+            console.info("Calling fitbit url :" + url);
 
             const credentialsNode = RED.nodes.getNode(config.fitbit);
             const credentials = RED.nodes.getNode(config.fitbit).credentials;

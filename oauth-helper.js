@@ -60,7 +60,10 @@ module.exports = function (RED) {
     }
 
     function makeRequest(method, url, credentials, credentialsID) {
-        if (!tokens[credentialsID]) return Promise.resolve();
+        if (!tokens[credentialsID]) {
+            console.error("Fitbit credentials not found: " + credentialsID + ", ignore request");
+            return Promise.resolve();
+        }
 
         const oauth = getFitbitOauth(credentials);
         const token = oauth.createToken({

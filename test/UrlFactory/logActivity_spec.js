@@ -10,7 +10,7 @@ describe('UrlFactory.logActivity', () => {
     done();
   });
 
-  it('should throw if no activityLogId or activityId passed', done => {
+  it('should throw if no logId or activityId passed', done => {
     expect(() => UrlFactory.logActivty({})).to.throw("activityId or activityName is required");
     done();
   });
@@ -96,10 +96,11 @@ describe('UrlFactory.logActivity', () => {
       startDate: 1617358664933,
       startTime: "17:00",
       durationSec: 888,
-      distance: 33.8
+      distance: 33.8,
+      distanceUnit: "kilometers"
     };
 
-    expect(UrlFactory.logActivty(data)).to.equal("https://api.fitbit.com/1/user/-/activities.json?activityId=1517&startTime=17%3A00&manualCalories=444&durationMillis=888000&date=2021-04-02&distance=33.8");
+    expect(UrlFactory.logActivty(data)).to.equal("https://api.fitbit.com/1/user/-/activities.json?activityId=1517&startTime=17%3A00&manualCalories=444&durationMillis=888000&date=2021-04-02&distance=33.8&distanceUnit=kilometers");
     done();
   });
 
@@ -123,10 +124,11 @@ describe('UrlFactory.logActivity', () => {
       startDate: "2021-07-21",
       startTime: "12:33",
       durationSec: 56.5,
-      distance: 1.566
+      distance: 1.566,
+      distanceUnit: "kilometers"
     };
 
-    expect(UrlFactory.logActivty(data)).to.equal("https://api.fitbit.com/1/user/-/activities.json?activityName=Walk&startTime=12%3A33&manualCalories=150&durationMillis=56000&date=2021-07-21&distance=1.566");
+    expect(UrlFactory.logActivty(data)).to.equal("https://api.fitbit.com/1/user/-/activities.json?activityName=Walk&startTime=12%3A33&manualCalories=150&durationMillis=56000&date=2021-07-21&distance=1.566&distanceUnit=kilometers");
     done();
   });
 

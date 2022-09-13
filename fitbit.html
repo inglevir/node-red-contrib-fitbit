@@ -34,14 +34,18 @@
             manualCaloriesType: {},
             distance: {},
             distanceType: {},
-            activityLogId: {},
-            activityLogIdType: {},
+            distanceUnit: {},
+            distanceUnitType: {},
+            logId: {},
+            logIdType: {},
             foodId: {},
             foodIdType: {},
             mealTypeId: {},
             mealTypeIdType: {},
             unitId: {},
-            unitIdType: {}
+            unitIdType: {},
+            weight: {},
+            weightType: {}
         },
         inputs: 1,
         outputs: 1,
@@ -82,10 +86,12 @@
             typeInput('activityId');
             typeInput('manualCalories');
             typeInput('distance');
-            typeInput('activityLogId');
+            typeInput('distanceUnit');
+            typeInput('logId');
             typeInput('foodId');
             typeInput('mealTypeId');
             typeInput('unitId');
+            typeInput('weight');
         }
     });
 </script>
@@ -125,6 +131,7 @@
                 <option value="" selected disabled hidden data-i18n="fitbit.label.activitiesSeriesPathDefault"></option>
                 <option value="steps" data-i18n="fitbit.label.activitiesSeriesPathSteps"></option>
                 <option value="distance" data-i18n="fitbit.label.activitiesSeriesPathDistance"></option>
+                <option value="distanceUnit" data-i18n="fitbit.label.activitiesSeriesPathDistanceUnit"></option>
                 <option value="calories" data-i18n="fitbit.label.activitiesSeriesPathCalories"></option>
                 <option value="caloriesBMR" data-i18n="fitbit.label.activitiesSeriesPathCaloriesBMR"></option>
                 <option value="activityCalories" data-i18n="fitbit.label.activitiesSeriesPathCaloriesActive"></option>
@@ -141,9 +148,9 @@
             <input type="hidden" id="node-input-startTimeType">
         </div>
         <div class="form-row">
-            <label for="node-input-activityLogId"><i class="fa fa-edit"></i> <span data-i18n="fitbit.label.activitylogid"></span></label>
-            <input type="text" id="node-input-activityLogId" style="width:275px;">
-            <input type="hidden" id="node-input-activityLogIdType">
+            <label for="node-input-logId"><i class="fa fa-edit"></i> <span data-i18n="fitbit.label.logId"></span></label>
+            <input type="text" id="node-input-logId" style="width:275px;">
+            <input type="hidden" id="node-input-logIdType">
         </div>
         <div class="form-row">
             <label for="node-input-durationSec"><i class="fa fa-edit"></i> <span data-i18n="fitbit.label.durationsec"></span></label>
@@ -171,6 +178,11 @@
             <input type="hidden" id="node-input-distanceType">
         </div>
         <div class="form-row">
+            <label for="node-input-distanceUnit"><i class="fa fa-edit"></i> <span data-i18n="fitbit.label.distanceUnit"></span></label>
+            <input type="text" id="node-input-distanceUnit" style="width:275px;">
+            <input type="hidden" id="node-input-distanceUnitType">
+        </div>
+        <div class="form-row">
             <label for="node-input-endDate"><i class="fa fa-edit"></i> <span data-i18n="fitbit.label.enddate"></span></label>
             <input type="text" id="node-input-endDate" style="width:275px;">
             <input type="hidden" id="node-input-endDateType">
@@ -194,6 +206,11 @@
             <label for="node-input-mealTypeId"><i class="fa fa-edit"></i> <span data-i18n="fitbit.label.mealType"></span></label>
             <input type="text" id="node-input-mealTypeId" style="width:275px;">
             <input type="hidden" id="node-input-mealTypeIdType">
+        </div>
+        <div class="form-row">
+            <label for="node-input-weight"><i class="fa fa-edit"></i> <span data-i18n="fitbit.label.calories"></span></label>
+            <input type="text" id="node-input-weight" style="width:275px;">
+            <input type="hidden" id="node-input-weightType">
         </div>
     </div>
     <div class="form-row">

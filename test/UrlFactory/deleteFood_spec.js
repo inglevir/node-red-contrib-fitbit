@@ -6,13 +6,13 @@ const UrlFactory = require("../../UrlFactory");
 describe('UrlFactory.deleteActivity', () => {
 
   it('should throw if no argument passed', done => {
-    expect(() => UrlFactory.deleteActivty()).to.throw("No data specified");
+    expect(() => UrlFactory.deleteFood()).to.throw("No data specified");
     done();
   });
 
   it('should throw if no logId passed', done => {
-    expect(() => UrlFactory.deleteActivty({})).to.throw("logId is required");
-    expect(() => UrlFactory.deleteActivty({logId: null})).to.throw("logId is required");
+    expect(() => UrlFactory.deleteFood({})).to.throw("logId is required");
+    expect(() => UrlFactory.deleteFood({logId: null})).to.throw("logId is required");
     done();
   });
 
@@ -21,7 +21,7 @@ describe('UrlFactory.deleteActivity', () => {
       logId: 1517
     };
 
-    expect(UrlFactory.deleteActivty(data)).to.equal("https://api.fitbit.com/1/user/-/activities/1517.json");
+    expect(UrlFactory.deleteFood(data)).to.equal("https://api.fitbit.com/1/user/-/foods/log/1517.json");
     done();
   });
 

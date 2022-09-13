@@ -204,20 +204,36 @@ class UrlFactory {
     urlObj.searchParams.append("manualCalories", data.manualCalories);
     urlObj.searchParams.append("durationMillis", String(parseInt(data.durationSec) * 1000));
     urlObj.searchParams.append("date", formatDate(data.startDate));
+
     if (data.distance) {
       urlObj.searchParams.append("distance", data.distance);
     }
+
+    if (data.distanceUnit) {
+      urlObj.searchParams.append("distanceUnit", data.distanceUnit);
+    }
+
     return urlObj.href;
   }
 
   static deleteActivty(data) {
     checkData(data);
 
-    if (!data.activityLogId) {
-      throw new Error("activityLogId is required.");
+    if (!data.logId) {
+      throw new Error("logId is required.");
     }
 
-    return fitbitUrlCurrentUser("activities", data.activityLogId);
+    return fitbitUrlCurrentUser("activities", data.logId);
+  }
+
+  static deleteFood(data) {
+    checkData(data);
+
+    if (!data.logId) {
+      throw new Error("logId is required.");
+    }
+
+    return fitbitUrlCurrentUser("foods/log", data.logId);
   }
 
   static logFood(data) {
@@ -253,6 +269,37 @@ class UrlFactory {
 
     return urlObj.href;
   }
+
+
+  static logWeight(data) {
+    checkData(data);
+
+    if (!data.startDate) {
+      throw new Error("Start date is required.");
+    }
+
+    if (!data.weight) {
+      throw new Error("weight is required.");
+    }
+
+    const urlObj = new URL(fitbitUrlCurrentUser("body/log/weight"));
+
+    urlObj.searchParams.append("weight", data.weight);
+    urlObj.searchParams.append("date", formatDate(data.startDate));
+
+    return urlObj.href;
+  }
+
+  static deleteWeightLog(data) {
+    checkData(data);
+
+    if (!data.logId) {
+      throw new Error("logId is required.");
+    }
+
+    return fitbitUrlCurrentUser("body/log/weight", data.logId);
+  }
+
 
 }
 
