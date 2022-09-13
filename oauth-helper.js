@@ -50,6 +50,7 @@ module.exports = function (RED) {
                 method: method,
                 url: url
             }), (err, response, _body) => {
+                console.log("Fitbit answer err: " + JSON.stringify(err) +", response " + JSON.stringify(response));
                 if (err) {
                     reject(err);
                 } else {
