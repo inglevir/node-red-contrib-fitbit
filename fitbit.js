@@ -17,6 +17,7 @@ function parseFitbitData(data) {
     let result_json;
     try {
         result_json = JSON.parse(body);
+        console.log("Result json: " + result_json);
     } catch (e) {
         throw "Json parse error: " + e.message;
     }
