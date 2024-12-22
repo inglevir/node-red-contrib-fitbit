@@ -18,7 +18,7 @@ function parseFitbitData(data) {
     try {
         const fixedBody = body.replace(/"logId":\s*(\d{10,})/g, '"logId":"$1"');
         result_json = JSON.parse(fixedBody);
-        console.log("Result json: " + JSON.stringify(result_json));
+        // console.log("Result json: " + JSON.stringify(result_json));
     } catch (e) {
         throw "Json parse error: " + e.message;
     }
