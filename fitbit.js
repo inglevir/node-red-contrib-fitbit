@@ -16,7 +16,12 @@ function parseFitbitData(data) {
 
     let result_json;
     try {
-        result_json = JSON.parse(body);
+        result_json = JSON.parse(body, (key, value) => {
+            if (typeof value === 'number' && value > Number.MAX_SAFE_INTEGER) {
+                return value.toString();
+            }
+            return value;
+        });
         console.log("Result json: " + JSON.stringify(result_json));
     } catch (e) {
         throw "Json parse error: " + e.message;
