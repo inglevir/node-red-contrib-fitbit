@@ -7,6 +7,9 @@ function parseFitbitData(data) {
     const status = data.statusCode;
     const body = data.body;
 
+    console.log(data.statusCode);
+    console.log(data.body);
+
     if (status == 204) { // No content
         return {}
     }
@@ -187,7 +190,7 @@ module.exports = function (RED) {
                 return;
             }
 
-            console.info("Calling fitbit url :" + url);
+            console.info("Calling fitbit url: " + resource.method + " " + url);
 
             const credentialsNode = RED.nodes.getNode(config.fitbit);
             const credentials = RED.nodes.getNode(config.fitbit).credentials;
@@ -196,6 +199,7 @@ module.exports = function (RED) {
                 try {
                     msg.payload = parseFitbitData(data);
                 } catch (err) {
+                    console.error(err);
                     errorReport(err, msg);
                     return;
                 }
